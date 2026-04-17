@@ -55,14 +55,14 @@
       role: "Co-Founder · Journalism & Storytelling",
       img: "/eunice.jpeg",
       delay: "0.2s",
-      bio: "Eunice architects the technical and analytical backbone of Zindua Africa. She translates complex datasets into clear, interactive experiences — building the tools and pipelines that let our journalism breathe on screen. She believes data is only as powerful as the design that reveals it.",
+      bio: "Eunice leads editorial direction and investigative work at Zindua Africa. She brings a rigorous journalism background and a deep commitment to representing African experiences with accuracy, nuance, and narrative power. Her focus is on stories that move people — not just inform them.",
     },
     {
       name: "Brenda Kiptim",
       role: "Co-Founder · Technology & Data",
-      img: "/brenda-linkedin.jpeg",
+      img: "public/brenda-linkedin.jpeg",
       delay: "0.1s",
-      bio: "Brenda leads editorial direction and investigative work at Zindua Africa. She brings a rigorous journalism background and a deep commitment to representing African experiences with accuracy, nuance, and narrative power. Her focus is on stories that move people — not just inform them.",
+      bio: "Brenda architects the technical and analytical backbone of Zindua Africa. She translates complex datasets into clear, interactive experiences — building the tools and pipelines that let our journalism breathe on screen. She believes data is only as powerful as the design that reveals it.",
     },
   ];
 
