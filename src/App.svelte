@@ -60,7 +60,7 @@
     {
       name: "Brenda Kiptim",
       role: "Co-Founder · Technology & Data",
-      img: "public/brenda-linkedin.jpeg",
+      img: "/brenda-linkedin.jpeg",
       delay: "0.1s",
       bio: "Brenda architects the technical and analytical backbone of Zindua Africa. She translates complex datasets into clear, interactive experiences — building the tools and pipelines that let our journalism breathe on screen. She believes data is only as powerful as the design that reveals it.",
     },
