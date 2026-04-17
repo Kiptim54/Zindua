@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-
+  // ["Email", "hello@zinduaafrica.com", "mailto:hello@zinduaafrica.com"], ["Twitter", "@zinduaafrica", "#"],
   let currentSlide = 0;
   let heroVisible = false;
   let sectionsVisible: Record<string, boolean> = {};
@@ -526,7 +526,7 @@
         commission a story, explore a partnership, or just talk.
       </p>
       <div class="flex flex-col mt-7">
-        {#each [["Email", "hello@zinduaafrica.com", "mailto:hello@zinduaafrica.com"], ["Twitter", "@zinduaafrica", "#"], ["Location", "Nairobi, Kenya", "#"]] as [label, value, href]}
+        {#each [["Location", "Nairobi, Kenya", "#"]] as [label, value, href]}
           <a
             {href}
             class="flex items-center gap-4 font-mono text-sm tracking-wide text-ink no-underline border-b border-ink/10 pb-4 mb-4 hover:text-rust transition-colors duration-200"
@@ -580,7 +580,8 @@
       <button
         class="w-full mt-3 font-mono text-sm tracking-[0.14em] uppercase px-8 py-4 bg-ink text-paper border-none cursor-pointer hover:bg-rust transition-colors duration-200"
       >
-        Send Message →
+        <!-- Send Message → -->
+        COMING SOON
       </button>
     </div>
   </div>
