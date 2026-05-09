@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  // ["Email", "hello@zinduaafrica.com", "mailto:hello@zinduaafrica.com"], ["Twitter", "@zinduaafrica", "#"],
+  // ["Email", "hello@Chembeafrica.com", "mailto:hello@Chembeafrica.com"], ["Twitter", "@Chembeafrica", "#"],
   let currentSlide = 0;
   let heroVisible = false;
   let sectionsVisible: Record<string, boolean> = {};
@@ -16,37 +16,39 @@
       date: "March 2025",
       tag: "Data Investigation",
       bg: "#C1440E",
+      link: "https://femicide-new.vercel.app/",
+      image: "/Femicide.png",
     },
-    {
-      id: 2,
-      category: "Health",
-      title: "Born Into Risk: Maternal Mortality and the Counties Left Behind",
-      excerpt:
-        "Behind the national statistics lies a geography of neglect. We mapped where Kenyan mothers are most likely to die giving life.",
-      date: "January 2025",
-      tag: "Scrollytelling",
-      bg: "#1A3A2A",
-    },
-    {
-      id: 3,
-      category: "Politics",
-      title: "Follow the Money: How Public Funds Move in an Election Year",
-      excerpt:
-        "An audit of public spending patterns in election cycles — and what the data reveals about where power actually flows.",
-      date: "November 2024",
-      tag: "Interactive",
-      bg: "#2A2060",
-    },
-    {
-      id: 4,
-      category: "Economy",
-      title: "The Informal Economy is Not Informal: Nairobi's Hidden GDP",
-      excerpt:
-        "Street traders, boda bodas, and roadside kiosks account for more of Nairobi's economy than anyone officially counts.",
-      date: "September 2024",
-      tag: "Data Story",
-      bg: "#5C3A1E",
-    },
+    // {
+    //   id: 2,
+    //   category: "Health",
+    //   title: "Born Into Risk: Maternal Mortality and the Counties Left Behind",
+    //   excerpt:
+    //     "Behind the national statistics lies a geography of neglect. We mapped where Kenyan mothers are most likely to die giving life.",
+    //   date: "January 2025",
+    //   tag: "Scrollytelling",
+    //   bg: "#1A3A2A",
+    // },
+    // {
+    //   id: 3,
+    //   category: "Politics",
+    //   title: "Follow the Money: How Public Funds Move in an Election Year",
+    //   excerpt:
+    //     "An audit of public spending patterns in election cycles — and what the data reveals about where power actually flows.",
+    //   date: "November 2024",
+    //   tag: "Interactive",
+    //   bg: "#2A2060",
+    // },
+    // {
+    //   id: 4,
+    //   category: "Economy",
+    //   title: "The Informal Economy is Not Informal: Nairobi's Hidden GDP",
+    //   excerpt:
+    //     "Street traders, boda bodas, and roadside kiosks account for more of Nairobi's economy than anyone officially counts.",
+    //   date: "September 2024",
+    //   tag: "Data Story",
+    //   bg: "#5C3A1E",
+    // },
   ];
 
   const team = [
@@ -55,14 +57,14 @@
       role: "Co-Founder · Journalism & Storytelling",
       img: "/eunice.jpeg",
       delay: "0.2s",
-      bio: "Eunice leads editorial direction and investigative work at Zindua Africa. She brings a rigorous journalism background and a deep commitment to representing African experiences with accuracy, nuance, and narrative power. Her focus is on stories that move people — not just inform them.",
+      bio: "Eunice leads editorial direction and investigative work at Chembe Africa. She brings a rigorous journalism background and a deep commitment to representing African experiences with accuracy, nuance, and narrative power. Her focus is on stories that move people — not just inform them.",
     },
     {
       name: "Brenda Kiptim",
       role: "Co-Founder · Technology & Data",
       img: "/brenda-linkedin.jpeg",
       delay: "0.1s",
-      bio: "Brenda architects the technical and analytical backbone of Zindua Africa. She translates complex datasets into clear, interactive experiences — building the tools and pipelines that let our journalism breathe on screen. She believes data is only as powerful as the design that reveals it.",
+      bio: "Brenda architects the technical and analytical backbone of Chembe Africa. She translates complex datasets into clear, interactive experiences — building the tools and pipelines that let our journalism breathe on screen. She believes data is only as powerful as the design that reveals it.",
     },
   ];
 
@@ -106,7 +108,7 @@
       href="#home"
       class="font-display font-bold text-sm tracking-widest uppercase text-ink no-underline"
     >
-      Zindua <span class="italic text-rust">Africa</span>
+      Chembe <span class="italic text-rust">Africa</span>
     </a>
 
     <!-- desktop links -->
@@ -199,7 +201,7 @@
       class="font-display font-bold leading-none text-paper mb-5 md:mb-6"
       style="font-size:clamp(3rem,10vw,7rem); letter-spacing:-0.01em;"
     >
-      Zindua<br /><span class="italic text-gold">Africa</span>
+      Chembe<br /><span class="italic text-gold">Africa</span>
     </h1>
     <p
       class="font-serif font-light italic text-paper/80 max-w-lg leading-relaxed text-base md:text-lg"
@@ -261,7 +263,7 @@
         <p
           class="font-serif leading-relaxed text-ink border-l-[3px] border-rust pl-4 md:pl-5 text-lg md:text-xl"
         >
-          Zindua Africa is a data storytelling studio built on the belief that
+          Chembe Africa is a data storytelling studio built on the belief that
           Africa's story deserves to be told accurately, rigorously, and with
           humanity.
         </p>
@@ -446,23 +448,42 @@
                 class="relative flex items-center justify-center overflow-hidden"
                 style="background:{story.bg}; min-height:180px;"
               >
+                {#if story.image}
+                  <img
+                    src={story.image}
+                    alt={story.title}
+                    class="absolute inset-0 w-full h-full object-cover opacity-20"
+                  />
+                {/if}
                 <div
                   class="absolute inset-0"
-                  style="background:linear-gradient(135deg,transparent,rgba(0,0,0,.3));"
+                  style="background:linear-gradient(135deg,transparent,rgba(0,0,0,.45));"
                 ></div>
-                <div
-                  class="absolute inset-0 opacity-[0.06]"
-                  style="display:grid; grid-template-columns:repeat(8,1fr); grid-template-rows:repeat(6,1fr);"
-                >
-                  {#each Array(48) as _}
-                    <span class="border-r border-b border-current"></span>
-                  {/each}
-                </div>
+                {#if !story.image}
+                  <div
+                    class="absolute inset-0 opacity-[0.06]"
+                    style="display:grid; grid-template-columns:repeat(8,1fr); grid-template-rows:repeat(6,1fr);"
+                  >
+                    {#each Array(48) as _}
+                      <span class="border-r border-b border-current"></span>
+                    {/each}
+                  </div>
+                {/if}
                 <span
                   class="absolute font-display font-bold italic text-paper/15 leading-none"
                   style="font-size:clamp(4rem,12vw,8rem); bottom:-0.5rem; right:1rem;"
                   >{story.category[0]}</span
                 >
+                {#if story.link}
+                  <a
+                    href={story.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="relative z-10 font-mono text-sm tracking-[0.14em] uppercase px-5 py-3 border border-paper text-paper no-underline hover:bg-paper hover:text-ink transition-colors duration-200"
+                  >
+                    Read Story →
+                  </a>
+                {/if}
               </div>
             </div>
           {/if}
@@ -598,7 +619,7 @@
   >
     <div>
       <div class="font-display font-bold text-paper text-3xl mb-2">
-        Zindua <span class="italic text-gold">Africa</span>
+        Chembe <span class="italic text-gold">Africa</span>
       </div>
       <p
         class="font-serif italic text-base leading-[1.65] text-paper/50 max-w-[280px] mt-2"
@@ -649,7 +670,7 @@
     class="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 md:gap-0 mt-6 md:mt-8"
   >
     <span class="font-mono text-sm tracking-widest uppercase text-paper/30"
-      >© 2026 Zindua Africa. All rights reserved.</span
+      >© 2026 Chembe Africa. All rights reserved.</span
     >
     <span class="font-serif italic text-base text-paper/30"
       >Rooted in Africa. Rigorous in data. Human in story.</span
